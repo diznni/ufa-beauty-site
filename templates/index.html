@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Clinic Ufa | Косметология</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <!-- Шапка -->
+    <header>
+        <div class="logo">BEAUTY<span>UFA</span></div>
+        <nav>
+            <a href="#services">Услуги</a>
+            <a href="#contact">Контакты</a>
+        </nav>
+    </header>
+
+    <!-- Главный экран -->
+    <section class="hero">
+        <h1>Твоя кожа заслуживает<br>профессионального ухода.</h1>
+        <p>Современная косметология в Уфе. Без воды, только результат.</p>
+        <a href="#services" class="btn">Смотреть услуги</a>
+    </section>
+
+    <!-- Услуги -->
+    <section id="services" class="services">
+        <h2>Услуги и цены</h2>
+        <div class="grid">
+            {% for service in services %}
+            <div class="card">
+                <h3>{{ service.name }}</h3>
+                <p class="desc">{{ service.desc }}</p>
+                <div class="price">{{ service.price }}</div>
+                <a href="#contact" class="btn-small">Записаться</a>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- Контакты -->
+    <section id="contact" class="contact">
+        <h2>Свяжитесь с нами</h2>
+        <p>Уфа, ул. Ленина, д. 10 (Центр города)</p>
+        <p>Телефон: +7 (999) 123-45-67</p>
+        <p>Работаем: Ежедневно с 09:00 до 21:00</p>
+        <a href="https://wa.me/79991234567" class="btn">Написать в WhatsApp</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 BeautyUfa. Все права защищены.</p>
+    </footer>
+
+</body>
+</html>
